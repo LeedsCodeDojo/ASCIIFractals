@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "fSharp_Ascii", "Mandelbrot\fSharp_Ascii.fsproj", "{28AAE19F-AD6C-4C81-8F03-7DE8323E800C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharp_WindowWithZoom", "Mandelbrot2\cSharp_WindowWithZoom.csproj", "{B69963FE-86B3-4ADF-B876-E5EF039AF327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharp_WindowHistrogram", "Mandelbrot3\cSharp_WindowHistrogram.csproj", "{2702BD60-D62F-4EBE-91C2-1F766B66B22D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharp_Ascii", "Mandelbrot4\cSharp_Ascii.csproj", "{4AB66648-3714-43F1-8256-DCFE7982D0FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28AAE19F-AD6C-4C81-8F03-7DE8323E800C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AAE19F-AD6C-4C81-8F03-7DE8323E800C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AAE19F-AD6C-4C81-8F03-7DE8323E800C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AAE19F-AD6C-4C81-8F03-7DE8323E800C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69963FE-86B3-4ADF-B876-E5EF039AF327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69963FE-86B3-4ADF-B876-E5EF039AF327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69963FE-86B3-4ADF-B876-E5EF039AF327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69963FE-86B3-4ADF-B876-E5EF039AF327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2702BD60-D62F-4EBE-91C2-1F766B66B22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2702BD60-D62F-4EBE-91C2-1F766B66B22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2702BD60-D62F-4EBE-91C2-1F766B66B22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2702BD60-D62F-4EBE-91C2-1F766B66B22D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB66648-3714-43F1-8256-DCFE7982D0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB66648-3714-43F1-8256-DCFE7982D0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB66648-3714-43F1-8256-DCFE7982D0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB66648-3714-43F1-8256-DCFE7982D0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
