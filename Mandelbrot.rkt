@@ -1,25 +1,33 @@
 #lang racket
 
 (define (mandelbrot width height iterations)
-  (define (scale number x y)
-    ((let* 
+  (define (scale x y)
+    (let* 
          ((xMinScale -2.5)
           (xMaxScale 1.0)
           (yMinScale -1.0)
           (yMaxScale 1.0)
-          (xSourcePosition (/ number width))
-          (ySourcePosition (/ number height))
-          (realNumber (+ (* x (- xMaxScale xMinScale)) xMinScale))
-          (imaginaryNumber (+ (* y (- yMaxScale yMinScale)) yMinScale))
-          )
-       (make-rectangular realNumber imaginaryNumber)
-       ))
-    )
+          (xSourcePosition (/ x width))
+          (ySourcePosition (/ y height))
+          (realNumber (+ (* xSourcePosition (- xMaxScale xMinScale)) xMinScale))
+          (imaginaryNumber (+ (* ySourcePosition (- yMaxScale yMinScale)) yMinScale)))
+       (make-rectangular realNumber imaginaryNumber)))
   
   (define (inSet x y)
-    "*"
+    
+    (define (countValues currentIteration currentValue initialValue)
+      (cond 
+        ((> (magnitude currentValue) 2)
+          currentIteration)
+        ((> currentIteration iterations) 
+          currentIteration)
+        (else (countValues (+ 1 currentIteration) (+ (* currentValue currentValue) initialValue) initialValue)))
     )
-  
+    
+    (cond
+      ((>= (countValues 0 (scale x y) (scale x y)) iterations) "*")
+      (else " ")))
+                
   (define (loopX xIndex yIndex)
     (cond
       ((<= xIndex 0) "")
