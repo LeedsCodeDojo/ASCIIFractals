@@ -14,15 +14,11 @@
        (make-rectangular realNumber imaginaryNumber)))
   
   (define (inSet x y)
-    
     (define (countValues currentIteration currentValue initialValue)
       (cond 
-        ((> (magnitude currentValue) 2)
-          currentIteration)
-        ((> currentIteration iterations) 
-          currentIteration)
-        (else (countValues (+ 1 currentIteration) (+ (* currentValue currentValue) initialValue) initialValue)))
-    )
+        ((> (magnitude currentValue) 2) currentIteration)
+        ((> currentIteration iterations) currentIteration)
+        (else (countValues (+ 1 currentIteration) (+ (* currentValue currentValue) initialValue) initialValue))))
     
     (cond
       ((>= (countValues 0 (scale x y) (scale x y)) iterations) "*")
@@ -32,21 +28,14 @@
     (cond
       ((<= xIndex 0) "")
       (else 
-       (string-append (loopX (- xIndex 1) yIndex)  (inSet xIndex yIndex))
-       )))
-  
+       (string-append (loopX (- xIndex 1) yIndex)  (inSet xIndex yIndex)))))
   
   (define (loopY yIndex)
     (cond
       ((<= yIndex 0) "")
       (else 
-       (string-append (loopY (- yIndex 1)) (loopX width yIndex) "\n")
-       )))
+       (string-append (loopY (- yIndex 1)) (loopX width yIndex) "\n"))))
   
-  (loopY height)
-)
+  (loopY height))
 
-
-(display 
- (mandelbrot 80 40 10)
- )
+(display (mandelbrot 120 40 10))
