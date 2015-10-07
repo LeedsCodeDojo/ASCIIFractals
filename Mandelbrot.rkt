@@ -1,20 +1,23 @@
 #lang racket
 
 (define (mandelbrot width height iterations)
+  (define (inSet x y)
+    "*"
+    )
   
-  (define (loopX index)
+  (define (loopX xIndex yIndex)
     (cond
-      ((<= index 0) "")
+      ((<= xIndex 0) "")
       (else 
-       (string-append (loopX (- index 1)) "*")
+       (string-append (loopX (- xIndex 1) yIndex)  (inSet xIndex yIndex))
        )))
   
   
-  (define (loopY index)
+  (define (loopY yIndex)
     (cond
-      ((<= index 0) "")
+      ((<= yIndex 0) "")
       (else 
-       (string-append (loopY (- index 1)) (loopX width) "\n")
+       (string-append (loopY (- yIndex 1)) (loopX width yIndex) "\n")
        )))
   
   (loopY height)
