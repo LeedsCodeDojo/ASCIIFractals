@@ -13,17 +13,21 @@
           (imaginaryNumber (+ (* ySourcePosition (- yMaxScale yMinScale)) yMinScale)))
        (make-rectangular realNumber imaginaryNumber)))
   
+  (define (iterationsToChar iterations)
+    (string-ref "1234567890" iterations)
+    )
+  
   (define (inSet x y)
     (define (countValues currentIteration currentValue initialValue)
       (cond 
         ((> (magnitude currentValue) 2) currentIteration)
         ((> currentIteration iterations) currentIteration)
         (else (countValues (+ 1 currentIteration) (+ (* currentValue currentValue) initialValue) initialValue))))
-    
-    (cond
-      ((>= (countValues 0 (scale x y) (scale x y)) iterations) "*")
-      (else " ")))
-                
+    (let ((iterationCount (countValues 0 (scale x y) (scale x y)))) 
+      (cond
+        ((>= iterationCount iterations) " " )
+        (else (string (string-ref "-=+0&£$?@#" iterationCount))))))
+  
   (define (loopX xIndex yIndex)
     (cond
       ((<= xIndex 0) "")
