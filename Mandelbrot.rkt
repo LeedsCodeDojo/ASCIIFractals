@@ -3,10 +3,10 @@
 (define (mandelbrot width height iterations)
   (define (scale x y)
     (let* 
-         ((xMinScale -2.5)
+         ((xMinScale -2.1)
           (xMaxScale 1.0)
-          (yMinScale -1.0)
-          (yMaxScale 1.0)
+          (yMinScale -1.2)
+          (yMaxScale 1.2)
           (xSourcePosition (/ x width))
           (ySourcePosition (/ y height))
           (realNumber (+ (* xSourcePosition (- xMaxScale xMinScale)) xMinScale))
@@ -14,8 +14,7 @@
        (make-rectangular realNumber imaginaryNumber)))
   
   (define (iterationsToChar iterations)
-    (string-ref "1234567890" iterations)
-    )
+    (string-ref "1234567890" iterations))
   
   (define (inSet x y)
     (define (countValues currentIteration currentValue initialValue)
@@ -25,8 +24,8 @@
         (else (countValues (+ 1 currentIteration) (+ (* currentValue currentValue) initialValue) initialValue))))
     (let ((iterationCount (countValues 0 (scale x y) (scale x y)))) 
       (cond
-        ((>= iterationCount iterations) " " )
-        (else (string (string-ref "-=+0&£$?@#" iterationCount))))))
+        ((>= iterationCount iterations) "`" )
+        (else (string (string-ref "-~=+&£$?@#" iterationCount))))))
   
   (define (loopX xIndex yIndex)
     (cond
