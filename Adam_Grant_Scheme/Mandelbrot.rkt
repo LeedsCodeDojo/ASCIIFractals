@@ -1,4 +1,4 @@
-#lang racket
+#lang scheme
 
 (define (mandelbrot width height iterations)
   (define (scale x y)
