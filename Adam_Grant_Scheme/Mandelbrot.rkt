@@ -13,9 +13,6 @@
           (imaginaryNumber (+ (* ySourcePosition (- yMaxScale yMinScale)) yMinScale)))
        (make-rectangular realNumber imaginaryNumber)))
   
-  (define (iterationsToChar iterations)
-    (string-ref "1234567890" iterations))
-  
   (define (inSet x y)
     (define (countValues currentIteration currentValue initialValue)
       (cond 
