@@ -43,7 +43,7 @@ def rotate(complexNumber, angle):
 # generate the string representing the sampled points on the complex plane
 # through a viewport defined by width, height, angle, xOrigin and yOrigin.
 # xmax and ymax set the width and height of the output in characters 
-def generateManlebrotString(width, height, xOrigin, yOrigin, angle=0, xmax=80, ymax= 25, func=asciiGreyScale):
+def generateMandelbrotString(width, height, xOrigin, yOrigin, angle=0, xmax=80, ymax= 25, func=asciiGreyScale):
     output = ""
             
     for j in range(ymax):
@@ -64,5 +64,5 @@ def generateManlebrotString(width, height, xOrigin, yOrigin, angle=0, xmax=80, y
 
 # example invocation to print the whole set:
 
-# print(generateManlebrotString(4,3,-2.4,-1.52,xmax=80,ymax=25,angle=0,func=asciiGreyScale))      
+# print(generateMandelbrotString(4,3,-2.4,-1.52,xmax=80,ymax=25,angle=0,func=asciiGreyScale))      
         
